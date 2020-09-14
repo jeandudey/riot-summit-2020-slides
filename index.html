@@ -285,8 +285,8 @@ Registrant Organization: Bitcoin Venezuela Non-Profit Organization
 
 				<ul>
 					<li>Each network interface (gnrc_netif_t) on RIOT provides a callback for providing routing information <pre>gnrc_netif_t::route_info_cb</pre></li>
-					<li>It informs us when the GNRC IPv6 stack doesn't have a valid route to a destination</li>
-					<li>Along with informing the need of a route, also provides the packet that is going to be sent for us to "buffer" it and send it later when the route is found</li>
+					<li>It inform us when the GNRC IPv6 stack doesn't have a valid route to a destination</li>
+					<li>Along with informing the need of a route, also provides the packet that is going to be sent. This is for us to "buffer" it and send it later when the route is found</li>
 				</ul>
 			</section>
 			<section>
