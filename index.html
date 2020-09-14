@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Locha Mesh: A Decentralized Mesh Network powered by RIOT</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/zenburn.css" id="highlight-theme">
+
+	<link href="fontawesome/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h3>Introduction</h3>
+
+				Locha Mesh: A Decentralized Mesh Network powered by RIOT
+
+				<pre>
+
+$ whoami
+
+	- I Am: Jean Pierre Dudey
+	- Do work as: Embedded Software Developer
+
+</pre>
+				<pre>$ whois locha.io
+
+Domain: LOCHA.IO
+Registrant Organization: Bitcoin Venezuela Non-Profit Organization
+</pre>
+
+				<p><i class="fab fa-twitter-square"></i></p>
+				<p>
+					<a href="https://twitter.com/Locha_io">@Locha_io</a>
+					<a href="https://twitter.com/jeandudey">@jeandudey</a>
+				</p>
+
+				<aside class="notes">
+					Welcome everyone, thanks for having the time to hear
+					me on my talk about<br>
+
+					- Locha Mesh: A Decentralized Mesh Network powered by RIOT<br>
+
+					Be prepared for the most fun twenty minutes of your life,
+					well... maybe not but lets be positive :D<br>
+
+					An small introduction, who I am?<br>
+
+					I'm Jean Pierre Dudey and I do work as an Embedded Software Developer for Locha.io<br>
+
+					And.. Who is Locha.IO?
+
+					Is an open-source and open-hardware project
+					initiative by the non-profit organization
+					Bitcoin Venezuela, to create the
+					software, protocols, and hardware needed for
+					a decentralized mesh network of devices
+					to allow transmitting messages and data without
+					being connected to the Internet.
+				</aside>
+			</section>
+			<section>
+				<h3>Why Locha Mesh</h3>
+
+				<ul>
+					<li>A network that could be used at any time, without depending on central infrastructure</li>
+					<li>A fallback network in case someone presses a big red button and the Internet shuts down</li>
+				</ul>
+
+				<img src="dist/assets/powergrid.svg" height="200">
+
+				<p>Psst: Did you now the "Locha" name comes from an old coin in Venezuela that had little value?</p>
+
+				<aside class="notes">
+					Locha Mesh was born with the main idea of having a
+					network of devices that could work without needing
+					power grid, nor, internet.
+				</aside>
+			</section>
+			<section>
+				<h3>National blackout</h3>
+				<h6>2019, March 7 - 2019, March 8</h6>
+				<h6></h6>
+				<img style="display: inline-block;" src="dist/assets/2019-mar-07.png" height="320">
+				<img style="display: inline-block;" src="dist/assets/2019-mar-08.png" height="320">
+				<i>Credits to: NASA EOSDIS Worldview</i>
+				<a href="https://go.nasa.gov/3maGlNf">https://go.nasa.gov/3maGlNf</a>
+
+				<aside class="notes">
+					For example: on two thousand nineteen Venezuela
+					(the country where I am from) suffered a national blackout,
+					this left the entire country without communications.
+
+					On situations like this contacting family, sending a message,
+					was nearly impossible, the cellular network didn't work on
+					most of the country and backup energy was non-existent.
+
+					On this images taken by the NASA, with just an one day margin
+					we can observe how the country changed from a shiny light to
+					just one state having electricity. This blackout lasted several
+					weeks and to this day intermittent blackouts occur on most of
+					the states.
+
+				</aside>
+			</section>
+			<section>
+				<h3>The solution</h3>
+
+				<ul>
+					<li>Small hand held device</li>
+					<li>Battery powered</li>
+					<li>Efficient</li>
+					<li>Easily replicated using spare parts (DIY)</li>
+				</ul>
+
+				<img src="dist/assets/header_9_image.png" height="220">
+
+				<aside class="notes">
+					After that blackout Locha commited to create
+					a battery powered, hand-held devices to make communications
+					easier on situations like that, or on remote areas with no
+					Internet, or just to communicate using a Mesh network.
+
+					The device should meet the following characteristics.
+
+					- It should be hand held, it should be carried anywhere and still
+					participate on the network.
+
+					- Battery powered to survive a blackout, and also easily rechargeable
+					even using small solar USB chargers.
+
+					- Efficient, to preserve battery it should
+					keep computations at a mininum without sacrifying performance
+					or connectivity.
+
+					- The hardware can be replicated using spare parts to make
+					a Do It Yourself version.
+				</aside>
+			</section>
+			<section>
+				<h3>So... How RIOT helps?</h3>
+
+				<ul>
+					<li><i class="fas fa-network-wired"></i> Powerful network stack!</li>
+					<li><i class="fas fa-microchip"></i> Supports a wide range of MCUs</li>
+					<li><i class="fas fa-check"></i> Easily extendable</li>
+					<li><i class="fas fa-heart"></i> Of course, a great community</li>
+				</ul>
+
+				<aside class="notes">
+					RIOT is the core that provides a powerful network
+					stack and hardware abstractions,
+
+					It also supports a wide range variaty of micro
+					controllers, while also allowing us to test on a
+					variety of devices and even on a computer!
+
+					This last point is essential when simulating a
+					network, you can easily generate simulations of
+					tens of nodes on a single computer.
+
+					And well to note, RIOT is very easily extendable and
+					it's module system is very powerful.
+
+					Of course, RIOT has a great community and most of time
+					making contributions is a great process.
+				</aside>
+			</section>
+			<section>
+				<h3>How does it work?</h3>
+
+				<img src="dist/assets/chips.svg">
+
+				<aside class="notes">
+					In very simple terms, we use an ESP (I ES PI) thirthy two
+					for the Wi-Fi network interface. And other micro controllers
+					for the Sub One Gigahertz radio interface, it is an
+					CC thirteen twelve radio from Texas Instruments.
+
+
+					We have been working on it's support on RIOT, however, it's
+					still compatible with other transceivers.
+
+					We choose to use two microcontrollers instead of a single
+					to keep things flexible for now, although it might be
+					changed to a single micro controller with an SPI transceiver.
+
+					The Wi-Fi network interface is for easy connections with
+					mobile phones and computers.
+				</aside>
+			</section>
+			<section>
+				<h3>The stack</h3>
+				<p>On the CC1312</p>
+
+				<img src="dist/assets/cc1312-stack.svg">
+
+				<aside class="notes">
+					The network stack is very simple, it uses the
+					6LowPAN IPv6 UDP stack from RIOT, in addition we
+					use RFC 5444 (Er Ef C five thousand four hundred fourty four)
+					packet protocol for MANETs.
+
+					On top of it, we use an in development version of the
+
+					Ad Hoc On-demand Distance Vector Version 2 Routing Algorithm
+				</aside>
+			</section>
+			<section>
+				<h3>What's up with a MANET?</h3>
+
+				<ul>
+					<li>Stands for Mobile Ad Hoc Network</li>
+					<li>Been in research for a loooong time</li>
+					<li>As the name says, allows mobile communications</li>
+					<li>Generally do not require Internet to work</li>
+				</ul>
+
+				<sub>(and by design is hard to provide Internet on a MANET)</sub>
+
+				<aside class="notes">
+					A MANET stands for a Mobilet Ad Hoc Network, these types of networks
+					have been in research for a very looong time. And as the name in says,
+					allows for mobile connections. This means that the topology can change
+					at any time, and the routing alogorithm should take care of it.
+
+					Generally a MANET network doesn't work with Internet, and by design
+					it's hard to provide Internet on a MANET. So they may be actaully
+					more an isolated Intranet or private network non routable on the
+					Internet.
+				</aside>
+			</section>
+			<section>
+				<h3>And what about AODVv2?</h3>
+
+				<ul>
+					<li>Not the same as the original AODV (it's IPv4 only)</li>
+					<li>Finds routes by flooding "Route Requests"</li>
+					<li>Once a route is found a "Route Response" is sent to the node that asked about the route</li>
+					<li>We ask for a route only when we need it</li>
+					<li>When multiple "Route Response" arrive, we select the one with the less hops to the destination</li>
+					<li>Built on top of RFC 5444</li>
+				</ul>
+
+				<aside class="notes">
+					And what about the [routing protocol]?
+
+					I will not pronounce the acronym because most of you
+					would laugh, however as I've said before it stands for
+					Ad-Hoc On-demand Distance Vector Version 1
+				</aside>
+			</section>
+			<section>
+				<h3>Taking a look at the routing</h3>
+			</section>
+			<section>
+				<h3>John wants to send a message to Jane</h3>
+				<img src="dist/assets/mesh.svg">
+			</section>
+			<section>
+				<h3>John proceeds to flood Route Requests</h3>
+				<p>All nodes participate by re-sending the request, and verifying wether
+					it isn't a duplicate request.
+				</p>
+				<img src="dist/assets/mesh-rreq.svg">
+			</section>
+			<section>
+				<h3>Jane once finding this Request, gives a Response to John</h3>
+				<img src="dist/assets/mesh-rrep.svg">
+			</section>
+			<section>
+				<h3>Okay... but how does this work with RIOT?</h3>
+
+				<ul>
+					<li>Each network interface (gnrc_netif_t) on RIOT provides a callback for providing routing information <pre>gnrc_netif_t::route_info_cb</pre></li>
+					<li>It informs us when the GNRC IPv6 stack doesn't have a valid route to a destination</li>
+					<li>Along with informing the need of a route, also provides the packet that is going to be sent for us to "buffer" it and send it later when the route is found</li>
+				</ul>
+			</section>
+			<section>
+				<h3>How IPv6 addresses are used?</h3>
+
+				<ul>
+					<li>Each node generates a random unique address, saved for later usage</li>
+					<li>All addresses use a fc00::/16 prefix or in other words an Unique Local Address</li>
+					<li>Unique Local Address aren't routable on the public Internet</li>
+					<li>These addresses however can be routed on a private network.</li>
+					<li>In general terms it's sort of (with exceptions) equivalent to the IPv4 private address range (192.168.0.0/16)</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Security challenges for the future</h3>
+
+				<ul>
+					<li>Security on a public network is somewhat difficult</li>
+					<li>Jamming is an issue on the radiospace, even interference could be problematic</li>
+					<li>Impersonation attacks are possible, althought can be solved using cryptgraphy (e.g.: generating an address out of an ECC public key, and incorporate validation on the routing protocol)</li>
+					<li>Validation of AODVv2 messages</li>
+				</ul>
+			</section>
+			<section>
+				<h3>And maybe a working prototype?</h3>
+				<p>Yes! Still being worked and details being polished :-)</p>
+				<img src="dist/assets/proto-0.jpg">
+			</section>
+			<section>
+				<h3>Finally</h3>
+				<p>Thanks for hearing me, and very much thanks to all of the RIOT Summit 2020 organizers.</p>
+
+				<i class="fas fa-heart"></i>
+				<br>
+				<p>Project main repository can be found at:</p>
+				<a href="https://github.com/btcven/locha">https://github.com/btcven/locha</a>
+
+				<p>Made with love using Reveal.js and Inkscape</p>
+				<p>100% Open Source</p>
+
+				<p><i class="fab fa-twitter-square"></i>#LaLuchaPorLaLochaLibre</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
